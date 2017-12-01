@@ -29,6 +29,8 @@
 	function generateStatsTableHTML($stats) {
 		$html = "<h1>Game Stats</h1>\n";
 
+        $html .= "<p><a class='statButton' href='stat_Form.html'>+ Add Game</a></p>\n";
+
 		if (count($stats) < 1) {
 			$html .= "<p>No games to display!</p>\n";
 			return $html;
