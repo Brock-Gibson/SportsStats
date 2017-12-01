@@ -21,7 +21,7 @@ td {
 	background-color: white;
 }
 
-a.statButton:link, a.taskButton:visited, a.taskButton:active {
+a.statButton:link, a.statButton:visited, a.statButton:active {
 	color: black;
 	font-size: 1.2em;
 	text-decoration: none;
@@ -30,7 +30,7 @@ a.statButton:link, a.taskButton:visited, a.taskButton:active {
 	border: 1px solid #4bc;
 }
 
-a.StatButton:hover {
+a.statButton:hover {
 	background-color: #5cd;
 }
 
