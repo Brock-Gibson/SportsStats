@@ -20,3 +20,22 @@ th {
 td {
 	background-color: white;
 }
+
+a.statButton:link, a.taskButton:visited, a.taskButton:active {
+	color: black;
+	font-size: 1.2em;
+	text-decoration: none;
+	background-color: #6de;
+	padding: 5px;
+	border: 1px solid #4bc;
+}
+
+a.StatButton:hover {
+	background-color: #5cd;
+}
+
+form {
+	background-color: #6de;
+	border: 1px solid #4bc;
+	padding: 5px;
+}
