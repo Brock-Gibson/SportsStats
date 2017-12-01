@@ -18,7 +18,7 @@
 
 	// Check connection
 	if ($conn->connect_error) {
-		print generatePageHTML("Tasks (Error)", generateErrorPageHTML($conn->connect_error), $stylesheet);
+		print generatePageHTML("Stats (Error)", generateErrorPageHTML($conn->connect_error), $stylesheet);
 		exit;
 	}
 
@@ -46,7 +46,7 @@
 	$html = <<<EOT
 <h1>Stats</h1>
 <p>An error occurred: $error</p>
-<p><a class='statButton' href='taskForm.html'>Add Stat</a><a class='statButton' href='index.php'>View Stats</a></p>
+<p><a class='statButton' href='stat_Form.html'>Add Stat</a><a class='statButton' href='index.php'>View Stats</a></p>
 EOT;
 
 	return $html;
