@@ -25,7 +25,7 @@
 	print generatePageHTML("Stats", generateStatsTableHTML($stats), $stylesheet);
 
 
-
+//Function to make the table
 	function generateStatsTableHTML($stats) {
 		$html = "<h1>Game Stats</h1>\n";
 

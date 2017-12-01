@@ -1,5 +1,5 @@
 <?php
-
+//make the html page itself
 function generatePageHTML($title, $body, $stylesheet) {
 	$html = <<<EOT
 <!DOCTYPE html>
