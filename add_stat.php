@@ -6,11 +6,11 @@
 
 	$vopponet = $_POST['Opponet'] ? $_POST['Opponet'] : "untitled";
     $vscore = $_POST['Score'] ? $_POST['Score'] : "untitled";
-    $vopponetScore = $_POST['OpponetScore'] ? $_POST['opponetScore'] : "untitled" ;
+    $vopponetScore = $_POST['OpponentScore'] ? $_POST['OpponentScore'] : "untitled";
     $vdate = $_POST['Date'] ? $_POST['Date'] : "untitled";
     $vwinOrLose = $_POST['winOrLose'];
     $vhomeOrAway = $_POST['homeOrAway'];
-    $vregularOrPostSeason = $_POST['regularOrPostseason'];
+    $vregularOrPostSeason = $_POST['regularOrPostSeason'];
 
 
 	// Create connection
@@ -30,7 +30,7 @@
     $homeOrAway = $conn->real_escape_string($vhomeOrAway);
     $regularOrPostSeason = $conn->real_escape_string($vregularOrPostSeason);
 
-	$sql = "INSERT INTO GAMES (Opponet, Score, OpponetScore, Date, WinOrLose, HomeOrAway, RegularOrPostSeason) VALUES ('$opponet', '$score', '$opponetScore', '$date', '$winOrLose', '$homeOrAway', '$regularOrPostSeason')";
+	$sql = "INSERT INTO GAMES (Opponet, Score, OpponetScore, GameDate, WinOrLose, HomeOrAway, RegularOrPostSeason) VALUES ('$opponet', '$score', '$opponetScore', '$date', '$winOrLose', '$homeOrAway', '$regularOrPostSeason')";
 
 	$result = $conn->query($sql);
 	if ($result) {
