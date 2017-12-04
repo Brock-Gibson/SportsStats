@@ -1,11 +1,14 @@
-# SportsStats
-Members: Brock Gibson and Nick Riley
+# SportsStats: A PHP driven stats application
+Members: **Brock Gibson and Nick Riley**
 
 This is basic application to keep track of various sports stats in games.
 
-Database Table Schema
+We used the text editor Brackets to develop, and used it's built in Git plugin which provided a easy interface for commiting changes and keeping track of our project
 
-CREATE TABLE GAMES(
+ ### Database Table Schema
+
+
+>CREATE TABLE GAMES(
     GameID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Opponet VARCHAR(30) NOT NULL,
     Score INT NOT NULL,
@@ -16,7 +19,7 @@ CREATE TABLE GAMES(
     RegularOrPostSeason VARCHAR(15) NOT NULL
 );
 
-CREATE TABLE PLAYERS(
+>CREATE TABLE PLAYERS(
     GameID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
     Number INT NOT NULL,
@@ -29,4 +32,6 @@ CREATE TABLE PLAYERS(
     Steals INT,
     TimePlayedInMin INT
 );
+
+
     
