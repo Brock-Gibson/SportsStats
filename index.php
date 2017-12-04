@@ -37,7 +37,7 @@
 		}
 
 		$html .= "<table>\n";
-		$html .= "<tr><th>id</th><th>Opponet</th><th>Score</th><th>Opponet Score</th><th>Date</th><th>Win/Lose</th><th>Home/Away</th><th>Regular/Post Season</th></tr>\n";
+		$html .= "<tr><th>Delete Game</th><th>Opponet</th><th>Score</th><th>Opponet Score</th><th>Date</th><th>Win/Lose</th><th>Home/Away</th><th>Regular/Post Season</th></tr>\n";
 
 		foreach ($stats as $stat) {
 			$id = $stat['GameID'];
@@ -50,7 +50,7 @@
             $regularOrPostSeason = $stat['RegularOrPostSeason'];
 
 
-			$html .= "<tr><td>$id</td><td>$opponet</td><td>$score</td><td>$opponetScore</td><td>$date</td><td>$winOrLose</td><td>$homeOrAway</td><td>$regularOrPostSeason</td></tr>\n";
+			$html .= "<tr><td><form action='delete_stat.php' method='post'><input type='hidden' name='action' value='delete' /><input type='hidden' name='id' value='$id' /><input type='submit' value='Delete'></form></td><td>$opponet</td><td>$score</td><td>$opponetScore</td><td>$date</td><td>$winOrLose</td><td>$homeOrAway</td><td>$regularOrPostSeason</td></tr>\n";
 		}
 		$html .= "</table>\n";
 
