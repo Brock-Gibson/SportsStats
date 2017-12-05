@@ -30,6 +30,7 @@
 		$html = "<h1>Game Stats</h1>\n";
 
         $html .= "<p><a class='statButton' href='stat_Form.html'>+ Add Game</a></p>\n";
+        $html .= "<p><form action='delete_stat.php' method='post'><input type='submit' value='Delete Game'></p>\n";
 
 		if (count($stats) < 1) {
 			$html .= "<p>No games to display!</p>\n";
@@ -37,7 +38,7 @@
 		}
 
 		$html .= "<table>\n";
-		$html .= "<tr><th>Delete Game</th><th>Opponet</th><th>Score</th><th>Opponet Score</th><th>Date</th><th>Win/Lose</th><th>Home/Away</th><th>Regular/Post Season</th></tr>\n";
+		$html .= "<tr><th>Select Game</th><th>Opponet</th><th>Score</th><th>Opponet Score</th><th>Date</th><th>Win/Lose</th><th>Home/Away</th><th>Regular/Post Season</th></tr>\n";
 
 		foreach ($stats as $stat) {
 			$id = $stat['GameID'];
@@ -50,9 +51,9 @@
             $regularOrPostSeason = $stat['RegularOrPostSeason'];
 
 
-			$html .= "<tr><td><form action='delete_stat.php' method='post'><input type='hidden' name='action' value='delete' /><input type='hidden' name='id' value='$id' /><input type='submit' value='Delete'></form></td><td>$opponet</td><td>$score</td><td>$opponetScore</td><td>$date</td><td>$winOrLose</td><td>$homeOrAway</td><td>$regularOrPostSeason</td></tr>\n";
+			$html .= "<tr><td><input type='radio' name='action' value='delete' /><input type='hidden' name='id' value='$id' /></td><td>$opponet</td><td>$score</td><td>$opponetScore</td><td>$date</td><td>$winOrLose</td><td>$homeOrAway</td><td>$regularOrPostSeason</td></tr>\n";
 		}
-		$html .= "</table>\n";
+		$html .= "</form></table>\n";
 
 		return $html;
 	}
