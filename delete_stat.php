@@ -10,6 +10,8 @@
 
 		if (!$id) {
 			$message = "No task was specified to delete.";
+            print generatePageHTML("Stats (Error)", generateErrorPageHTML($message), $stylesheet);
+            exit;
 		} else {
 			// Create connection
 

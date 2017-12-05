@@ -51,7 +51,7 @@
             $regularOrPostSeason = $stat['RegularOrPostSeason'];
 
 
-			$html .= "<tr><td><input type='radio' name='action' value='delete' /><input type='hidden' name='id' value='$id' /></td><td>$opponet</td><td>$score</td><td>$opponetScore</td><td>$date</td><td>$winOrLose</td><td>$homeOrAway</td><td>$regularOrPostSeason</td></tr>\n";
+			$html .= "<tr><td><input type='radio' name='id' value='$id' /></td><td>$opponet</td><td>$score</td><td>$opponetScore</td><td>$date</td><td>$winOrLose</td><td>$homeOrAway</td><td>$regularOrPostSeason</td></tr>\n";
 		}
 		$html .= "</form></table>\n";
 
