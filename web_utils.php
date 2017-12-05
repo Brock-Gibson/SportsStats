@@ -7,6 +7,13 @@ function generatePageHTML($title, $body, $stylesheet) {
 <head>
 <title>$title</title>
 <link rel="stylesheet" type="text/css" href="$stylesheet">
+<script type="text/javascript">
+  function submitForm(action) {
+    var form = document.getElementById('form1');
+    form.action = action;
+    form.submit();
+  }
+</script>
 </head>
 <body>
 $body
