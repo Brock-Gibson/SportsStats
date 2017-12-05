@@ -14,11 +14,11 @@ th, td {
 }
 
 th {
-	background-color: whitesmoke;
+	background-color: lightseagreen;
 }
 
 td {
-	background-color: white;
+	background-color: lightseagreen;
 }
 
 a.statButton:link, a.statButton:visited, a.statButton:active {
