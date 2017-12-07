@@ -14,7 +14,7 @@
     $regularOrPostSeason = $stat['RegularOrPostSeason'];
 
     $body = <<<EOT
-<h1>Stats</h1>
+<h1>Update Game</h1>
 <form action="update_stat.php" method="post">
 
 <input type='hidden' name='action' value='update' /><input type='hidden' name='id' value='$id' />
