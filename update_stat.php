@@ -1,8 +1,9 @@
 <?php
     require ('db_credentials.php');
 	require ('web_utils.php');
+    $stylesheet = 'sportsstats.css';
 
-	$stylesheet = 'sportsstats.css';
+    $id = $_POST['id'];
 
 	$vopponet = $_POST['Opponet'] ? $_POST['Opponet'] : "untitled";
     $vscore = $_POST['Score'] ? $_POST['Score'] : "untitled";
@@ -22,6 +23,9 @@
 		exit;
 	}
 
+
+//escape values
+
 	$opponet = $conn->real_escape_string($vopponet);
 	$score = $conn->real_escape_string($vscore);
     $opponetScore = $conn->real_escape_string($vopponetScore);
@@ -30,7 +34,7 @@
     $homeOrAway = $conn->real_escape_string($vhomeOrAway);
     $regularOrPostSeason = $conn->real_escape_string($vregularOrPostSeason);
 
-    $sql = "UPDATE GAMES SET Opponet='$opponet', Score='$score', OpponetScore='$opponetScore', GameDate='$date', WinOrLose='$winORLose', HomeOrAway='$homeOrAway', RegularOrPostSeason='$regularOrPostSeason' WHERE id = $id";
+    $sql = "UPDATE GAMES SET Opponet='$opponet', Score='$score', OpponetScore='$opponetScore', GameDate='$date', WinOrLose='$winORLose', HomeOrAway='$homeOrAway', RegularOrPostSeason='$regularOrPostSeason' WHERE GameID = $id";
 
     $result = $conn->query($sql);
 	if ($result) {
