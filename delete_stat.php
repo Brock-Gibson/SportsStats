@@ -25,7 +25,7 @@
 				if ( $result = $mysqli->query($sql) ) {
 					redirect("index.php");
 				} else {
-					print generatePageHTML("Stats (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
+					print generatePageHTML("Delete Game (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
                     exit;
 				}
 				$mysqli->close();

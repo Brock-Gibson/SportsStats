@@ -57,5 +57,5 @@
 EOT;
 
 
-    print generatePageHTML("Stats", $body, $stylesheet);
+    print generatePageHTML("Update Game", $body, $stylesheet);
 ?>
