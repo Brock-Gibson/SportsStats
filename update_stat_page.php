@@ -20,16 +20,16 @@
 <input type='hidden' name='action' value='update' /><input type='hidden' name='id' value='$id' />
 
 <p>Opponent<br />
-<input type="text" name="Opponet" value="{$opponet}" placeholder="Opponent" maxlength="255" size="80"></p>
+<input type="text" name="Opponet" value="" placeholder="Opponent" maxlength="255" size="80"></p>
 
 <p>Score<br />
-<input type="number" name="Score" value="$score" min="0"></p>
+<input type="number" name="Score" value="$" min="0"></p>
 
 <p>Opponent Score<br />
-<input type="number" name="OpponentScore" value="$stat[OpponetScore]" min="0"></p>
+<input type="number" name="OpponentScore" value="" min="0"></p>
 
 <p>Date<br />
-<input type="date" name="Date" value="$stat[GameDate]"></p>
+<input type="date" name="Date" value=""></p>
 
  <p>Win or Lose<br />
     <select name="winOrLose">
