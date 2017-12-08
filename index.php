@@ -21,6 +21,7 @@
 			array_push($stats, $row);
 		}
 	}
+    $conn->close();
 
 	print generatePageHTML("Stats", generateStatsTableHTML($stats), $stylesheet);
 
@@ -32,7 +33,7 @@
         $html .= "<p><form action='http://brockgibson.epizy.com/stat_Form.html'><input type='submit' value='Add Game' /></form>";
         $html .= "<form id='form1' method='post'>";
         $html .= "<input type='button' onclick=submitForm('delete_stat.php') value='Delete Game' />\n";
-        $html .= "<input type='button' onclick=submitForm('update_stat.php') value='Update Game' /></p>\n";
+        $html .= "<input type='button' onclick=submitForm('update_stat_page.php') value='Update Game' /></p>\n";
 
 		if (count($stats) < 1) {
 			$html .= "<p>No games to display!</p>\n";

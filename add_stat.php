@@ -37,7 +37,7 @@
 		// insert successfull, redirect browser to index.php to see list of tasks
 		redirect("index.php");
 	} else {
-		print generatePageHTML("Stats (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
+		print generatePageHTML("Add Game (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
 		exit;
 	}
 

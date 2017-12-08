@@ -1,8 +1,15 @@
 <?php
     require ('db_credentials.php');
 	require ('web_utils.php');
+    $stylesheet = 'sportsstats.css';
 
-	$stylesheet = 'sportsstats.css';
+    $id = $_POST['id'];
+
+    if (!$id) {
+        $message = "No task was specified to update.";
+        print generatePageHTML("Stats (Error)", generateErrorPageHTML($message), $stylesheet);
+        exit;
+    }
 
 	$vopponet = $_POST['Opponet'] ? $_POST['Opponet'] : "untitled";
     $vscore = $_POST['Score'] ? $_POST['Score'] : "untitled";
@@ -12,35 +19,31 @@
     $vhomeOrAway = $_POST['homeOrAway'];
     $vregularOrPostSeason = $_POST['regularOrPostSeason'];
 
+			// Create connection
+			$mysqli = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($mysqli->connect_error) {
+				print generatePageHTML("Stats (Error)", generateErrorPageHTML($mysqli->connect_error), $stylesheet);
+		        exit;
+			} else {
+                $opponet = $mysqli->real_escape_string($vopponet);
+                $score = $mysqli->real_escape_string($vscore);
+                $opponetScore = $mysqli->real_escape_string($vopponetScore);
+                $date = $mysqli->real_escape_string($vdate);
+                $winOrLose = $mysqli->real_escape_string($vwinOrLose);
+                $homeOrAway = $mysqli->real_escape_string($vhomeOrAway);
+                $regularOrPostSeason = $mysqli->real_escape_string($vregularOrPostSeason);
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
+				$sql = "UPDATE GAMES SET Opponet='$opponet', Score='$score', OpponetScore='$opponetScore', GameDate='$date', WinOrLose='$winOrLose', HomeOrAway='$homeOrAway', RegularOrPostSeason='$regularOrPostSeason' WHERE GameID = $id";
 
-	// Check connection
-	if ($conn->connect_error) {
-		print generatePageHTML("Stats (Error)", generateErrorPageHTML($conn->connect_error), $stylesheet);
-		exit;
-	}
-
-	$opponet = $conn->real_escape_string($vopponet);
-	$score = $conn->real_escape_string($vscore);
-    $opponetScore = $conn->real_escape_string($vopponetScore);
-    $date = $conn->real_escape_string($vdate);
-    $winOrLose = $conn->real_escape_string($vwinOrLose);
-    $homeOrAway = $conn->real_escape_string($vhomeOrAway);
-    $regularOrPostSeason = $conn->real_escape_string($vregularOrPostSeason);
-
-    $sql = "UPDATE GAMES SET Opponet='$opponet', Score='$score', OpponetScore='$opponetScore', GameDate='$date', WinOrLose='$winORLose', HomeOrAway='$homeOrAway', RegularOrPostSeason='$regularOrPostSeason' WHERE id = $id";
-
-    $result = $conn->query($sql);
-	if ($result) {
-		// insert successfull, redirect browser to index.php to see list of tasks
-		redirect("index.php");
-	} else {
-		print generatePageHTML("Stats (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
-		exit;
-	}
-
+				if ( $result = $mysqli->query($sql) ) {
+					redirect("index.php");
+				} else {
+					print generatePageHTML("Update Game (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
+                    exit;
+				}
+				$mysqli->close();
+			}
 
 	function generateErrorPageHTML($error) {
 	$html = <<<EOT
