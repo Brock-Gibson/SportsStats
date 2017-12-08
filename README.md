@@ -44,4 +44,7 @@ We used the text editor Brackets to develop, and used it's built in Git plugin w
 [logo]:  https://github.com/Brockerboy/SportsStats/blob/master/SportsStatsERD.png
 "ERD"
     
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=hLuQe1pTzk4&feature
+" target="_blank"><img src="http://img.youtube.com/vi/hLuQe1pTzk4&feature/0.jpg" 
+alt="Project Walkthrough" width="240" height="180" border="10" /></a>
     
