@@ -4,6 +4,8 @@
 
 	$stylesheet = 'sportsstats.css';
 
+    $id = $_POST['id'];
+
     if (!$id) {
         $message = "No game was selected to add a player too!";
         print generatePageHTML("Add Player (Error)", generateErrorPageHTML($message), $stylesheet);
@@ -12,7 +14,6 @@
 
 
     $vid = $_POST['id'];
-	$vopponet = $_POST['Opponet'] ? $_POST['Opponet'] : "untitled";
     $vplayer = $_POST['Player'] ? $_POST['Player'] : "untitled";
     $vnumber = $_POST['Number'] ? $_POST['Number'] : "untitled";
     $vposition = $_POST['Position'];
@@ -33,7 +34,6 @@
 	}
 
     $id = $conn->real_escape_string($vid);
-	$opponet = $conn->real_escape_string($vopponet);
     $player = $conn->real_escape_string($vplayer);
     $number = $conn->real_escape_string($vnumber);
     $position = $conn->real_escape_string($vposition);
@@ -45,7 +45,7 @@
     $steals = $conn->real_escape_string($vsteals);
     $timeplayedinmin = $conn->real_escape_string($vtimeplayedinmin);
 
-	$sql = "INSERT INTO PLAYERS (GameID, Name, Number, Position, FieldGoals, ThreePoints, Rebounds, Turnovers, Assists, Steals, TimePlayedInMin) VALUES ('$id', '$opponet', '$player', '$number', '$position', '$fieldgoals', '$threepoints', '$rebounds', '$turnovers', '$assists', '$steals', '$timeplayedinmin')";
+	$sql = "INSERT INTO PLAYERS (GameID, Name, Number, Position, FieldGoals, ThreePoints, Rebounds, Turnovers, Assists, Steals, TimePlayedInMin) VALUES ('$id', '$player', '$number', '$position', '$fieldgoals', '$threepoints', '$rebounds', '$turnovers', '$assists', '$steals', '$timeplayedinmin')";
 
 	$result = $conn->query($sql);
 	if ($result) {
