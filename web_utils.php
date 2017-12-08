@@ -30,4 +30,14 @@ function redirect($url, $statusCode = 303)
    die();
 }
 
+function generateErrorPageHTML($error) {
+	$html = <<<EOT
+<h1>Stats</h1>
+<p>An error occurred: $error</p>
+<p><a class='statButton' href='player_Form.html'>Add Stat</a><a class='statButton' href='index.php'>View Stats</a></p>
+EOT;
+
+	return $html;
+	}
+
 ?>

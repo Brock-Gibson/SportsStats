@@ -4,6 +4,14 @@
 
 	$stylesheet = 'sportsstats.css';
 
+    if (!$id) {
+        $message = "No game was selected to add a player too!";
+        print generatePageHTML("Add Player (Error)", generateErrorPageHTML($message), $stylesheet);
+        exit;
+    }
+
+
+    $vid = $_POST['id'];
 	$vopponet = $_POST['Opponet'] ? $_POST['Opponet'] : "untitled";
     $vplayer = $_POST['Player'] ? $_POST['Player'] : "untitled";
     $vnumber = $_POST['Number'] ? $_POST['Number'] : "untitled";
@@ -24,6 +32,7 @@
 		exit;
 	}
 
+    $id = $conn->real_escape_string($vid);
 	$opponet = $conn->real_escape_string($vopponet);
     $player = $conn->real_escape_string($vplayer);
     $number = $conn->real_escape_string($vnumber);
@@ -36,7 +45,7 @@
     $steals = $conn->real_escape_string($vsteals);
     $timeplayedinmin = $conn->real_escape_string($vtimeplayedinmin);
 
-	$sql = "INSERT INTO PLAYERS (Name, Number, Position, FieldGoals, ThreePoints, Rebounds, Turnovers, Assists, Steals, TimePlayedInMin) VALUES ('$opponet', '$player', '$number', '$position', '$fieldgoals', '$threepoints', '$rebounds', '$turnovers', '$assists', '$steals', '$timeplayedinmin')";
+	$sql = "INSERT INTO PLAYERS (GameID, Name, Number, Position, FieldGoals, ThreePoints, Rebounds, Turnovers, Assists, Steals, TimePlayedInMin) VALUES ('$id', '$opponet', '$player', '$number', '$position', '$fieldgoals', '$threepoints', '$rebounds', '$turnovers', '$assists', '$steals', '$timeplayedinmin')";
 
 	$result = $conn->query($sql);
 	if ($result) {
@@ -48,13 +57,4 @@
 	}
 
 
-	function generateErrorPageHTML($error) {
-	$html = <<<EOT
-<h1>Stats</h1>
-<p>An error occurred: $error</p>
-<p><a class='statButton' href='player_Form.html'>Add Stat</a><a class='statButton' href='index.php'>View Stats</a></p>
-EOT;
-
-	return $html;
-	}
 ?>

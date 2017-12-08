@@ -1,13 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Add Player</title>
-<link rel="stylesheet" type="text/css" href="sportsstats.css">
-</head>
-<body>
+<?php
+    require ('db_credentials.php');
+	require ('web_utils.php');
+    $stylesheet = 'sportsstats.css';
+
+    $id = $_POST['id'];
+
+    if (!$id) {
+        $message = "No game was selected to add a player too!";
+        print generatePageHTML("Add Player (Error)", generateErrorPageHTML($message), $stylesheet);
+        exit;
+    }
+
+    $body = <<<EOT
 <h1>Add Player</h1>
-<form action="add_stat.php" method="post">
-    <h1>Player Stats</h1>
+<form action="add_player.php" method="post">
+    <h1>Add Player</h1>
+
+    <input type='hidden' name='action' value='update' /><input type='hidden' name='id' value='$id' />
 
     <p>Game Opponent<br />
     <input type="text" name="Opponet" value="" placeholder="" maxlength="255" size="80"></p>
@@ -52,5 +61,8 @@
 
   <input type="submit" value="Submit">
 </form>
-</body>
-</html>
+EOT;
+
+print generatePageHTML("Add Player", $body, $stylesheet);
+
+?>

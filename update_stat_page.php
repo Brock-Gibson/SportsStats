@@ -5,13 +5,7 @@
 
     $id = $_POST['id'];
 
-    $opponet = $stat['Opponet'];
-    $score = $stat['Score'];
-    $opponetScore = $stat['OpponetScore'];
-    $date = ($stat['GameDate']);
-    $winOrLose = $stat['WinOrLose'];
-    $homeOrAway = $stat['HomeOrAway'];
-    $regularOrPostSeason = $stat['RegularOrPostSeason'];
+
 
     $body = <<<EOT
 <h1>Update Game</h1>

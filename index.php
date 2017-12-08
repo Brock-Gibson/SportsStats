@@ -30,10 +30,12 @@
 	function generateStatsTableHTML($stats) {
 		$html = "<h1>Game Stats</h1>\n";
 
-        $html .= "<p><form action='http://brockgibson.epizy.com/stat_Form.html'><input type='submit' value='Add Game' /></form>";
         $html .= "<form id='form1' method='post'>";
-        $html .= "<input type='button' onclick=submitForm('delete_stat.php') value='Delete Game' />\n";
-        $html .= "<input type='button' onclick=submitForm('update_stat_page.php') value='Update Game' /></p>\n";
+        $html .= "<input type='button' onclick=submitForm('http://brockgibson.epizy.com/stat_Form.html') value='Add Game'/>";
+        $html .= "<input type='button' onclick=submitForm('delete_stat.php') value='Delete Game'/>";
+        $html .= "<input type='button' onclick=submitForm('update_stat_page.php') value='Update Game'/>";
+        $html .= "<input type='button' onclick=submitForm('player_Form.php') value='Add Player' />";
+        $html .= "<input type='button' onclick=submitForm('update_stat_page.php') value='View Players'/> <br>";
 
 		if (count($stats) < 1) {
 			$html .= "<p>No games to display!</p>\n";
