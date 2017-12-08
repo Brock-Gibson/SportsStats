@@ -25,10 +25,10 @@
 
     <p>Position <br />
         <select name="Position">
-            <option value="PointGuard">Point Guard</option>
-            <option value="ShootingGuard">Shooting Guard</option>
-            <option value="SmallForward">Small Forward</option>
-            <option value="PowerForward">Power Forward</option>
+            <option value="Point Guard">Point Guard</option>
+            <option value="Shooting Guard">Shooting Guard</option>
+            <option value="Small Forward">Small Forward</option>
+            <option value="Power Forward">Power Forward</option>
             <option value="Center">Center</option>
         </select>
     </p>
