@@ -65,8 +65,10 @@
         $timeplayed = $player['TimePlayedInMin'];
 
 
-        $html .= "<tr><td><input type='radio' name='id' value='$playerid' /><td>$name</td><td>$number</td><td>$position</td><td>$fieldgoals</td><td>$threepoints</td><td>$rebounds</td><td>$turnovers</td><td>$assists</td><td>$steals</td><td>$timeplayed</td></tr>\n";
+        $html .= "<tr><td><input type='radio' name='playerid' value='$playerid'/><td>$name</td><td>$number</td><td>$position</td><td>$fieldgoals</td><td>$threepoints</td><td>$rebounds</td><td>$turnovers</td><td>$assists</td><td>$steals</td><td>$timeplayed</td></tr>\n";
     }
+
+    $html .= "<input type='hidden' name='id' value='$gameid'/>";
     $html .= "</form></table>\n";
 
     return $html;
