@@ -7,9 +7,9 @@
 <body>
 <h1>Stats</h1>
 <form action="add_stat.php" method="post">
-
-    <p>Opponent<br />
-    <input type="text" name="Opponet" value="" placeholder="Opponent" maxlength="255" size="80"></p>
+    <h2>Game Stats</h2>
+    <p>Game Opponent<br />
+    <input type="text" name="Opponet" value="" placeholder="" maxlength="255" size="80"></p>
 
     <p>Score<br />
     <input type="number" name="Score" value="" min="0"></p>
@@ -40,6 +40,51 @@
             <option value="Post">Post</option>
     </select>
     </p>
+
+    <h2>Player Stats</h2>
+
+    <p>Game Opponent<br />
+    <input type="text" name="Opponet" value="" placeholder="" maxlength="255" size="80"></p>
+
+    <p>Name <br />
+    <input type="text" name="Player" value="" placeholder="" maxlength="99" size="80"></p>
+
+    <p>Number <br />
+    <input type="number" name="Number" value="" placeholder="" min="0" max="99" size="10"></p>
+
+    <p>Position <br />
+        <select name="Position">
+            <option value="PointGuard">Point Guard</option>
+            <option value="ShootingGuard">Shooting Guard</option>
+            <option value="SmallForward">Small Forward</option>
+            <option value="PowerForward">Power Forward</option>
+            <option value="Center">Center</option>
+        </select>
+    </p>
+
+    <p>Field Goals<br />
+        <input type="number" name="FieldGoals" value="" placeholder="" min="0" size="10">
+    </p>
+    <p>Three Points<br />
+        <input type="number" name="ThreePoints" value="" placeholder="" min="0" size="10">
+    </p>
+    <p>Rebounds<br />
+        <input type="number" name="Rebounds" value="" placeholder="" min="0" size="10">
+    </p>
+    <p>Turn Overs<br />
+        <input type="number" name="Turnovers" value="" placeholder="" min="0" size="10">
+    </p>
+    <p>Assists<br />
+        <input type="number" name="Assists" value="" placeholder="" min="0" size="10">
+    </p>
+    <p>Steals<br />
+        <input type="number" name="Steals" value="" placeholder="" min="0" size="10">
+    </p>
+    <p>TimePlayedInMin<br />
+        <input type="number" name="TimePlayedInMin" value="" placeholder="" min="0" size="10">
+    </p>
+
+
 
   <input type="submit" value="Submit">
 </form>
