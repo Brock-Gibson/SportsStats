@@ -21,7 +21,7 @@
 		print generatePageHTML("Stats (Error)", generateErrorPageHTML($conn->connect_error), $stylesheet);
 		exit;
 	}
-
+//prevent insertion attack
 	$opponet = $conn->real_escape_string($vopponet);
 	$score = $conn->real_escape_string($vscore);
     $opponetScore = $conn->real_escape_string($vopponetScore);
@@ -29,7 +29,7 @@
     $winOrLose = $conn->real_escape_string($vwinOrLose);
     $homeOrAway = $conn->real_escape_string($vhomeOrAway);
     $regularOrPostSeason = $conn->real_escape_string($vregularOrPostSeason);
-
+//send sql info inside sql variable
 	$sql = "INSERT INTO GAMES (Opponet, Score, OpponetScore, GameDate, WinOrLose, HomeOrAway, RegularOrPostSeason) VALUES ('$opponet', '$score', '$opponetScore', '$date', '$winOrLose', '$homeOrAway', '$regularOrPostSeason')";
 
 	$result = $conn->query($sql);
