@@ -5,6 +5,12 @@
 
     $id = $_POST['id'];
 
+    if (!$id) {
+        $message = "No game was specified to update.";
+        print generatePageHTML("Update Game (Error)", generateErrorPageHTML($message), $stylesheet);
+        exit;
+    }
+
 
 
     $body = <<<EOT

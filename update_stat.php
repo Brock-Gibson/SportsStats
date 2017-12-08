@@ -6,8 +6,8 @@
     $id = $_POST['id'];
 
     if (!$id) {
-        $message = "No task was specified to update.";
-        print generatePageHTML("Stats (Error)", generateErrorPageHTML($message), $stylesheet);
+        $message = "No game was specified to update.";
+        print generatePageHTML("Update Game (Error)", generateErrorPageHTML($message), $stylesheet);
         exit;
     }
 

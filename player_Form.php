@@ -14,12 +14,8 @@
     $body = <<<EOT
 <h1>Add Player</h1>
 <form action="add_player.php" method="post">
-    <h1>Add Player</h1>
 
     <input type='hidden' name='action' value='update' /><input type='hidden' name='id' value='$id' />
-
-    <p>Game Opponent<br />
-    <input type="text" name="Opponet" value="" placeholder="" maxlength="255" size="80"></p>
 
     <p>Name <br />
     <input type="text" name="Player" value="" placeholder="" maxlength="99" size="80"></p>
