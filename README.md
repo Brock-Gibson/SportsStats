@@ -34,5 +34,10 @@ We used the text editor Brackets to develop, and used it's built in Git plugin w
     TimePlayedInMin INT
 );
 
+<!--This is a reference link to our Entity Relationship Diagram-->
+Reference-style: 
+![alt text][logo]
 
+[logo]:  https://github.com/Brockerboy/SportsStats/blob/master/SportsStatsERD.png
+"ERD"
     
