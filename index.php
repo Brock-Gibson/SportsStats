@@ -21,6 +21,7 @@
 			array_push($stats, $row);
 		}
 	}
+    $conn->close();
 
 	print generatePageHTML("Stats", generateStatsTableHTML($stats), $stylesheet);
 
