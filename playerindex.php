@@ -40,7 +40,7 @@
     $html .= "<form id='form1' method='post'>";
     $html .= "<input type='button' onclick=submitForm('index.php') value='View Games'/>";
     $html .= "<input type='button' onclick=submitForm('player_Form.php') value='Add Player'/>";
-    $html .= "<input type='button' onclick=submitForm('') value='Delete Player'/>";
+    $html .= "<input type='button' onclick=submitForm('delete_player.php') value='Delete Player'/>";
 
     if (count($players) < 1) {
         $html .= "<p>No Players to display!</p>\n";
@@ -65,7 +65,7 @@
         $timeplayed = $player['TimePlayedInMin'];
 
 
-        $html .= "<tr><td><input type='radio' name='id' value='$gameid' /><td>$name</td><td>$number</td><td>$position</td><td>$fieldgoals</td><td>$threepoints</td><td>$rebounds</td><td>$turnovers</td><td>$assists</td><td>$steals</td><td>$timeplayed</td></tr>\n";
+        $html .= "<tr><td><input type='radio' name='id' value='$playerid' /><td>$name</td><td>$number</td><td>$position</td><td>$fieldgoals</td><td>$threepoints</td><td>$rebounds</td><td>$turnovers</td><td>$assists</td><td>$steals</td><td>$timeplayed</td></tr>\n";
     }
     $html .= "</form></table>\n";
 
