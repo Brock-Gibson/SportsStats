@@ -34,8 +34,6 @@ a.statButton:hover {
 	background-color: #5cd;
 }
 
-form {
-	background-color: #6de;
-	border: 1px solid #4bc;
+#form1 {
 	padding: 5px;
 }
