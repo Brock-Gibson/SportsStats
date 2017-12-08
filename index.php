@@ -35,14 +35,14 @@
         $html .= "<input type='button' onclick=submitForm('delete_stat.php') value='Delete Game'/>";
         $html .= "<input type='button' onclick=submitForm('update_stat_page.php') value='Update Game'/>";
         $html .= "<input type='button' onclick=submitForm('player_Form.php') value='Add Player' />";
-        $html .= "<input type='button' onclick=submitForm('update_stat_page.php') value='View Players'/> <br>";
+        $html .= "<input type='button' onclick=submitForm('playerindex.php') value='View Players'/> <br>\n";
 
 		if (count($stats) < 1) {
 			$html .= "<p>No games to display!</p>\n";
 			return $html;
 		}
 
-		$html .= "<table>\n";
+		$html .= "\n<table>\n";
 		$html .= "<tr><th>Select Game</th><th>Opponet</th><th>Score</th><th>Opponet Score</th><th>Date</th><th>Win/Lose</th><th>Home/Away</th><th>Regular/Post Season</th></tr>\n";
 
 		foreach ($stats as $stat) {
