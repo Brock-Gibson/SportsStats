@@ -38,7 +38,7 @@ We used the text editor Brackets to develop, and used it's built in Git plugin w
 );
 
 <!--This is a reference link to our Entity Relationship Diagram-->
-Entity Relationship Diagram 
+### Entity Relationship Diagram 
 ![alt text][logo]
 
 [logo]:  https://github.com/Brockerboy/SportsStats/blob/master/SportsStatsERD.png
