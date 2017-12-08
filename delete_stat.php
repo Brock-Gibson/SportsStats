@@ -22,8 +22,11 @@
 			} else {
 				$id = $mysqli->real_escape_string($id);
 				$sql = "DELETE FROM GAMES WHERE GameID = $id";
+                $sql1 = "DELETE FROM PLAYERS WHERE GameID = $id";
 				if ( $result = $mysqli->query($sql) ) {
-					redirect("index.php");
+                    if ( $result = $mysqli->query($sql1) ) {
+                        redirect("index.php");
+                    }
 				} else {
 					print generatePageHTML("Delete Game (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
                     exit;
