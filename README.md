@@ -8,7 +8,7 @@ SIDE NOTE: The git extention in brackets was giving us issues so we both added o
 
 We used the text editor Brackets to develop, and used it's built in Git plugin which provided a easy interface for commiting changes and keeping track of our project
 
-We demonstrating Creating, Reading, Updating, and Deleting (CRUD) through the project
+We demonstrated Creating, Reading, Updating, and Deleting (CRUD) throughput the project
 
 - **Create:** add_stat.php, add_player.php
 - **Read:** index.php, playerindex.php
