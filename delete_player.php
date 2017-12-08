@@ -2,7 +2,7 @@
         require ('db_credentials.php');
 	    require ('web_utils.php');
         $stylesheet = 'sportsstats.css';
-        $playerid = $_POST['id'];
+        $playerid = $_POST['playerid'];
 		$message = "";
 		if (!$playerid) {
 			$message = "No player was specified to delete.";
