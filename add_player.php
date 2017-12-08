@@ -1,5 +1,8 @@
 <?php
-	require ('db_credentials.php');
+    //Add player gets its data from player_Form.php From there it takes the data and stores it in variables that are then set up with the
+    //the real escape string to avoid SQL injection attacks. The variable from the real escape string is the inserted into the PLAYERS table.
+    //if the insertion is succesful it redirects back to index.php.
+    require ('db_credentials.php');
 	require ('web_utils.php');
 
 	$stylesheet = 'sportsstats.css';
@@ -12,7 +15,7 @@
         exit;
     }
 
-
+    //taking data from player_Form.php and storing it in a variable
     $vid = $_POST['id'];
     $vplayer = $_POST['Player'] ? $_POST['Player'] : "untitled";
     $vnumber = $_POST['Number'] ? $_POST['Number'] : "untitled";
@@ -32,7 +35,7 @@
 		print generatePageHTML("Stats (Error)", generateErrorPageHTML($conn->connect_error), $stylesheet);
 		exit;
 	}
-
+    //taking data variable and running it through real escape string to avoid SQL injection attacks
     $id = $conn->real_escape_string($vid);
     $player = $conn->real_escape_string($vplayer);
     $number = $conn->real_escape_string($vnumber);
@@ -44,7 +47,7 @@
     $assists = $conn->real_escape_string($vassista);
     $steals = $conn->real_escape_string($vsteals);
     $timeplayedinmin = $conn->real_escape_string($vtimeplayedinmin);
-
+    //data is inserted into PLAYERS table
 	$sql = "INSERT INTO PLAYERS (GameID, Name, Number, Position, FieldGoals, ThreePoints, Rebounds, Turnovers, Assists, Steals, TimePlayedInMin) VALUES ('$id', '$player', '$number', '$position', '$fieldgoals', '$threepoints', '$rebounds', '$turnovers', '$assists', '$steals', '$timeplayedinmin')";
 
 	$result = $conn->query($sql);

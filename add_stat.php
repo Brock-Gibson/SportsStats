@@ -1,9 +1,12 @@
 <?php
-	require ('db_credentials.php');
+	//Add stat gets its data from stat_Form.php From there it takes the data and stores it in variables that are then set up with the
+    //the real escape string to avoid SQL injection attacks. The variable from the real escape string is the inserted into the GAMES table.
+    //if the insertion is succesful it redirects back to index.php.
+    require ('db_credentials.php');
 	require ('web_utils.php');
 
 	$stylesheet = 'sportsstats.css';
-
+//taking data that is sent from stat_Form.php and storing in a variable
 	$vopponet = $_POST['Opponet'] ? $_POST['Opponet'] : "untitled";
     $vscore = $_POST['Score'] ? $_POST['Score'] : "untitled";
     $vopponetScore = $_POST['OpponentScore'] ? $_POST['OpponentScore'] : "untitled";
