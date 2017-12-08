@@ -4,13 +4,14 @@
     $stylesheet = 'sportsstats.css';
 
     $id = $_POST['id'];
-
+//throws error if there is no id sent
     if (!$id) {
         $message = "No game was specified to update.";
         print generatePageHTML("Update Game (Error)", generateErrorPageHTML($message), $stylesheet);
         exit;
     }
 
+//gets game data through POST
 	$vopponet = $_POST['Opponet'] ? $_POST['Opponet'] : "untitled";
     $vscore = $_POST['Score'] ? $_POST['Score'] : "untitled";
     $vopponetScore = $_POST['OpponentScore'] ? $_POST['OpponentScore'] : "untitled";
@@ -26,6 +27,7 @@
 				print generatePageHTML("Stats (Error)", generateErrorPageHTML($mysqli->connect_error), $stylesheet);
 		        exit;
 			} else {
+                //escapes data to prevent injection
                 $opponet = $mysqli->real_escape_string($vopponet);
                 $score = $mysqli->real_escape_string($vscore);
                 $opponetScore = $mysqli->real_escape_string($vopponetScore);
@@ -36,9 +38,11 @@
 
 				$sql = "UPDATE GAMES SET Opponet='$opponet', Score='$score', OpponetScore='$opponetScore', GameDate='$date', WinOrLose='$winOrLose', HomeOrAway='$homeOrAway', RegularOrPostSeason='$regularOrPostSeason' WHERE GameID = $id";
 
+                //sends sql query
 				if ( $result = $mysqli->query($sql) ) {
 					redirect("index.php");
 				} else {
+                    //error page if query fails
 					print generatePageHTML("Update Game (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
                     exit;
 				}

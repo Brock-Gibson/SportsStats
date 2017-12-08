@@ -24,12 +24,14 @@ EOT;
 	return $html;
 }
 
+//redirects to sent URL
 function redirect($url, $statusCode = 303)
 {
    header('Location: ' . $url, true, $statusCode);
    die();
 }
 
+//error page html util
 function generateErrorPageHTML($error) {
 	$html = <<<EOT
 <h1>Stats</h1>

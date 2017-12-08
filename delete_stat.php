@@ -7,7 +7,7 @@
         $id = $_POST['id'];
 
 		$message = "";
-
+    //makes sure valid game id was passed to prevent all values from being deleted.
 		if (!$id) {
 			$message = "No game was specified to delete.";
             print generatePageHTML("Delete Game (Error)", generateErrorPageHTML($message), $stylesheet);
@@ -28,6 +28,7 @@
                         redirect("index.php");
                     }
 				} else {
+                    //error page if sql fails
 					print generatePageHTML("Delete Game (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
                     exit;
 				}

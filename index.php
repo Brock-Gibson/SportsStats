@@ -13,6 +13,7 @@
 		exit;
 	}
 
+    //selects all data from games table
 	$sql = "SELECT * FROM GAMES";
 	$result = $conn->query($sql);
 	$stats = array();
@@ -31,6 +32,7 @@
 		$html = "<h1>Game Stats</h1>\n";
 
         $html .= "<form id='form1' method='post'>";
+        //form buttons to add the different table functions.
         $html .= "<input type='button' onclick=submitForm('http://brockgibson.epizy.com/stat_Form.html') value='Add Game'/>";
         $html .= "<input type='button' onclick=submitForm('delete_stat.php') value='Delete Game'/>";
         $html .= "<input type='button' onclick=submitForm('update_stat_page.php') value='Update Game'/>";
@@ -55,7 +57,7 @@
             $homeOrAway = $stat['HomeOrAway'];
             $regularOrPostSeason = $stat['RegularOrPostSeason'];
 
-
+            //add tables values to html table
 			$html .= "<tr><td><input type='radio' name='id' value='$id' /></td><td>$opponet</td><td>$score</td><td>$opponetScore</td><td>$date</td><td>$winOrLose</td><td>$homeOrAway</td><td>$regularOrPostSeason</td></tr>\n";
 		}
 		$html .= "</form></table>\n";

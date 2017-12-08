@@ -4,13 +4,14 @@
     $stylesheet = 'sportsstats.css';
 
     $id = $_POST['id'];
-
+//if no ID, throw error page
     if (!$id) {
         $message = "No game was selected to add a player too!";
         print generatePageHTML("Add Player (Error)", generateErrorPageHTML($message), $stylesheet);
         exit;
     }
 
+//body of the new player form, takes all the data then adds it to player table with add_player.php
     $body = <<<EOT
 <h1>Add Player</h1>
 <form action="add_player.php" method="post">

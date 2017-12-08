@@ -21,6 +21,7 @@
 		exit;
 	}
 
+//selects players that are added to a game
 	$sql = "SELECT * FROM PLAYERS WHERE GameID = $id";
 	$result = $conn->query($sql);
 	$players = array();
@@ -33,7 +34,7 @@
 
     print generatePageHTML("Players", generatePlayersTableHTML($players), $stylesheet);
 
-
+//makes player table
     function generatePlayersTableHTML($players) {
     $html = "<h1>Player Stats</h1>\n";
 
@@ -42,6 +43,7 @@
     $html .= "<input type='button' onclick=submitForm('player_Form.php') value='Add Player'/>";
     $html .= "<input type='button' onclick=submitForm('delete_player.php') value='Delete Player'/>";
 
+        //if no results display error
     if (count($players) < 1) {
         $html .= "<p>No Players to display!</p>\n";
         return $html;
@@ -64,7 +66,7 @@
         $steals = $player['Steals'];
         $timeplayed = $player['TimePlayedInMin'];
 
-
+        //add player data to player homepage index table
         $html .= "<tr><td><input type='radio' name='playerid' value='$playerid'/><td>$name</td><td>$number</td><td>$position</td><td>$fieldgoals</td><td>$threepoints</td><td>$rebounds</td><td>$turnovers</td><td>$assists</td><td>$steals</td><td>$timeplayed</td></tr>\n";
     }
 

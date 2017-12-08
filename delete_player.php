@@ -4,6 +4,7 @@
         $stylesheet = 'sportsstats.css';
         $playerid = $_POST['playerid'];
 		$message = "";
+    //check if a valid player id was sent so all records don't delete
 		if (!$playerid) {
 			$message = "No player was specified to delete.";
             print generatePageHTML("Delete Player (Error)", generateErrorPageHTML($message), $stylesheet);
@@ -21,6 +22,7 @@
                         redirect("index.php");
                     }
 				else {
+                    //print error page if sql fails
 					print generatePageHTML("Delete Player (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
                     exit;
 				}

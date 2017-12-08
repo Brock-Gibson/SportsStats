@@ -4,7 +4,7 @@
     $stylesheet = 'sportsstats.css';
 
     $id = $_POST['id'];
-
+//throw error if no id is selected
     if (!$id) {
         $message = "No game was specified to update.";
         print generatePageHTML("Update Game (Error)", generateErrorPageHTML($message), $stylesheet);
@@ -12,7 +12,7 @@
     }
 
 
-
+//update stat form to grab new data and update it
     $body = <<<EOT
 <h1>Update Game</h1>
 <form action="update_stat.php" method="post">
