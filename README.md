@@ -1,7 +1,7 @@
 # SportsStats: A PHP driven stats application
 Members: **Brock Gibson and Nick Riley**
 
-This is basic application to keep track of various sports stats in games. It is devided into two tables that are connected via a GameID. The GAMES table
+This is basic application to keep track of various sports stats in games. It is divided into two tables that are connected via a GameID. The GAMES table
 contains info on the opponent, the home team score, opponent score, date, whether the home team won or lost, home game or away, and whether the game was regular or post season. Once the game exists you can add player data that is linked via the GameID mentioned earlier. From there you can add player data such as name, position, field goals, etc. Both tables can be added to, deleted from, are visible on the index.php or playerindex.php, and can be updated.
 
 SIDE NOTE: The git extention in brackets was giving us issues so we both added on one account and signed commits with /Name to say who did what commits. For example this commit will have the comment "added more content info for the README file/Nick".
