@@ -1,10 +1,10 @@
 <?php
         require ('db_credentials.php');
 	    require ('web_utils.php');
-        $stylesheet = 'sportsstats.css'
-        $id = $_POST['id'];
+        $stylesheet = 'sportsstats.css';
+        $playerid = $_POST['id'];
 		$message = "";
-		if (!$id) {
+		if (!$playerid) {
 			$message = "No player was specified to delete.";
             print generatePageHTML("Delete Player (Error)", generateErrorPageHTML($message), $stylesheet);
             exit;
@@ -16,11 +16,11 @@
 				$message = $mysqli->connect_error;
 			} else {
 				$id = $mysqli->real_escape_string($id);
-				$sql = "DELETE FROM PlAYERS WHERE GameID = $id";
+				$sql = "DELETE FROM PLAYERS WHERE playerID = $playerid";
 				if ( $result = $mysqli->query($sql) ) {
                         redirect("index.php");
                     }
-				} else {
+				else {
 					print generatePageHTML("Delete Player (Error)", generateErrorPageHTML($conn->error . " using SQL: $sql"), $stylesheet);
                     exit;
 				}
