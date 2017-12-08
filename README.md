@@ -20,7 +20,8 @@ We used the text editor Brackets to develop, and used it's built in Git plugin w
 );
 
 >CREATE TABLE PLAYERS(
-    GameID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    playerID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    GameID INT NOT NULL,
     Name VARCHAR(100) NOT NULL,
     Number INT NOT NULL,
     Position VARCHAR(20) NOT NULL,
